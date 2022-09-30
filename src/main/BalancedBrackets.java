@@ -29,7 +29,13 @@ public class BalancedBrackets {
             } else if (ch == ']') {
                 brackets--;
             }
+            if (brackets <0) {
+                throw new IllegalArgumentException("Out of order brackets. A closed bracket appears with no corresponding " +
+                        "opening bracket before it");
+            }
         }
+
+
         return brackets == 0;
     }
 }
